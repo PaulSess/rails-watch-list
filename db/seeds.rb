@@ -1,3 +1,14 @@
+require 'faker'
+puts "deleting old one's fist"
+Movie.destroy_all
+List.create(name: "Drama")
+20.times do
+  Movie.create(title: Faker::Movie.title,
+              overview: Faker::Emotion.adjective,
+              poster_url: "https://source.unsplash.com/random/900%C3%97700/?movie",
+              rating: rand(1..5))
+end
+puts "added new movies...done!"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
